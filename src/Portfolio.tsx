@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Trophy } from "lucide-react";
 import { useEffect, useState } from "react";
 
 // Floating Asteroid Component
@@ -204,7 +204,7 @@ export default function Portfolio() {
                     </h2>
 
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                        {["React.js", "Spring Boot", "MySQL", "Python", "Git & GitHub", "Postman"].map((skill, index) => (
+                        {["React.js", "Next.js", "Node.js", "Express.js", "Tailwind CSS", "Ant Design", "Spring Boot", "Java", "Python", "Firebase", "C++", "MySQL", "PostgreSQL", "Supabase", "DSA", "Docker (Basics)", "Git & GitHub", "Postman"].map((skill, index) => (
                             <motion.div
                                 key={skill}
                                 initial={{ opacity: 0, y: 20 }}
@@ -259,19 +259,21 @@ export default function Portfolio() {
                             whileInView={{ x: 0, opacity: 1 }}
                             viewport={{ once: true }}
                         >
-                            <Card className="bg-black/60 backdrop-blur-md border border-slate-800 hover:border-indigo-500/50 transition-all relative overflow-hidden group">
-                                <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                <CardContent className="p-8 md:pl-20 relative">
-                                    <div className="hidden md:block absolute left-6 top-9 w-4 h-4 bg-indigo-500 rounded-full shadow-[0_0_10px_rgba(99,102,241,0.8)]" />
+                            <a href="https://drive.google.com/file/d/17iGvlAxKQI15jds9tpnd39M7iAMzJkUe/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="block h-full">
+                                <Card className="bg-black/60 backdrop-blur-md border border-slate-800 hover:border-indigo-500/50 transition-all relative overflow-hidden group h-full">
+                                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    <CardContent className="p-8 md:pl-20 relative">
+                                        <div className="hidden md:block absolute left-6 top-9 w-4 h-4 bg-indigo-500 rounded-full shadow-[0_0_10px_rgba(99,102,241,0.8)]" />
 
-                                    <h3 className="text-2xl font-bold text-white mb-2">Full Stack Web Developer Intern</h3>
-                                    <p className="text-indigo-400 mb-4 font-mono">Computira Soft Solutions • 2023–2024</p>
-                                    <ul className="list-disc ml-5 space-y-2 text-slate-300">
-                                        <li>Built PDF conversion tools using JavaScript and Bootstrap</li>
-                                        <li>Improved UI performance and fixed backend issues</li>
-                                    </ul>
-                                </CardContent>
-                            </Card>
+                                        <h3 className="text-2xl font-bold text-white mb-2">Full Stack Web Developer Intern</h3>
+                                        <p className="text-indigo-400 mb-4 font-mono">Computira Soft Solutions • 2023–2024</p>
+                                        <ul className="list-disc ml-5 space-y-2 text-slate-300">
+                                            <li>Built PDF conversion tools using JavaScript and Bootstrap</li>
+                                            <li>Improved UI performance and fixed backend issues</li>
+                                        </ul>
+                                    </CardContent>
+                                </Card>
+                            </a>
                         </motion.div>
                     </div>
                 </section>
@@ -285,9 +287,27 @@ export default function Portfolio() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
-                            { title: "Project Management Tool", tech: "React • Spring Boot • MySQL", color: "from-blue-500 to-cyan-500" },
-                            { title: "Earth Observation Data Visualizer", tech: "Leaflet • PostGIS", color: "from-green-500 to-emerald-500" },
-                            { title: "Daily Vocabulary Bot", tech: "React • Gemini API", color: "from-purple-500 to-pink-500" }
+                            {
+                                title: "Project Management Tool",
+                                tech: "React • Spring Boot • MySQL",
+                                color: "from-blue-500 to-cyan-500",
+                                drive: "https://drive.google.com/drive/folders/1uhrqzDSX9X7AEcmzCTouIvp8DtZxQL2u?usp=sharing",
+                                github: "https://github.com/Nithya-collab/ProjectManagementToolBackEnd"
+                            },
+                            {
+                                title: "Earth Observation Data Visualizer",
+                                tech: "Leaflet • PostGIS",
+                                color: "from-green-500 to-emerald-500",
+                                drive: "https://drive.google.com/drive/folders/1zC85cMwxN7QhV6m7JA6gEajv8ACfstjZ?usp=sharing",
+                                github: "https://github.com/Nithya-collab/EarthObservationDataVisualizer"
+                            },
+                            {
+                                title: "Daily Vocabulary Bot",
+                                tech: "React • Gemini API",
+                                color: "from-purple-500 to-pink-500",
+                                drive: "https://drive.google.com/drive/folders/1olYGLIq4ZrJT2DC2WuBXj4yLZRkVmWYo?usp=sharing",
+                                github: "https://github.com/Nithya-collab/DailyVocChatbot"
+                            }
                         ].map((project, index) => (
                             <motion.div
                                 key={project.title}
@@ -295,11 +315,24 @@ export default function Portfolio() {
                                 transition={{ type: "spring", stiffness: 300 }}
                             >
                                 <Card className="bg-slate-900 border border-slate-700 h-full overflow-hidden group relative">
+                                    {/* Main Card Link (Drive) */}
+                                    <a href={project.drive} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-10" />
+
                                     <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${project.color}`} />
-                                    <CardContent className="p-8">
+                                    <CardContent className="p-8 flex flex-col h-full">
                                         <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${project.color} opacity-20 mb-6 group-hover:opacity-40 transition-opacity`} />
                                         <h3 className="text-xl font-bold text-white mb-3 group-hover:text-indigo-300 transition-colors">{project.title}</h3>
-                                        <p className="text-sm text-slate-400 font-mono">{project.tech}</p>
+                                        <p className="text-sm text-slate-400 font-mono mb-6">{project.tech}</p>
+
+                                        <div className="mt-auto flex justify-end relative z-20">
+                                            <a href={project.github} target="_blank" rel="noopener noreferrer"
+                                                onClick={(e) => e.stopPropagation()}
+                                                className="transition-transform hover:scale-110 active:scale-95">
+                                                <Button size="icon" variant="ghost" className="rounded-full hover:bg-slate-800 text-slate-400 hover:text-white border border-transparent hover:border-slate-600">
+                                                    <Github size={20} />
+                                                </Button>
+                                            </a>
+                                        </div>
                                     </CardContent>
                                     {/* Starry overlay on hover */}
                                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-0 group-hover:opacity-20 transition-opacity pointer-events-none" />
@@ -307,6 +340,143 @@ export default function Portfolio() {
                             </motion.div>
                         ))}
                     </div>
+                </section>
+
+                {/* ONGOING PROJECTS */}
+                <section className="mb-32">
+                    <h2 className="text-3xl font-bold mb-10 text-white flex items-center">
+                        <span className="bg-emerald-600 w-2 h-10 mr-4 rounded-full" />
+                        Current Trajectories / Ongoing Projects
+                    </h2>
+
+                    <div className="grid md:grid-cols-2 gap-8">
+                        {[
+                            {
+                                title: "Open Source Project",
+                                desc: "Contributing to initial project setup, feature planning, and codebase structuring.",
+                                tech: "React • Node.js • Git"
+                            },
+                            {
+                                title: "SaaS Application",
+                                desc: "Working on MVP design and core feature implementation. Focus on problem identification, system design, and scalability concepts.",
+                                tech: "System Design • Full Stack"
+                            }
+                        ].map((project, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                            >
+                                <Card className="bg-slate-900/60 backdrop-blur-md border border-slate-700 hover:border-emerald-500/50 transition-all h-full relative overflow-hidden group">
+                                    <div className="absolute top-4 right-4 flex items-center gap-2 opacity-70">
+                                        <span className="relative flex h-2 w-2">
+                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                        </span>
+                                        <span className="text-[10px] text-emerald-400 font-mono tracking-widest uppercase">In Progress</span>
+                                    </div>
+                                    <CardContent className="p-8">
+                                        <h3 className="text-xl font-bold text-white mb-4 group-hover:text-emerald-300 transition-colors">{project.title}</h3>
+                                        <p className="text-slate-300 mb-6 leading-relaxed">
+                                            {project.desc}
+                                        </p>
+                                        <div className="flex items-center text-xs text-slate-500 font-mono border-t border-slate-800 pt-4 mt-auto">
+                                            {project.tech}
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </motion.div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* HACKATHONS & COMPETITIONS */}
+                <section className="mb-32">
+                    <h2 className="text-3xl font-bold mb-10 text-white flex items-center">
+                        <span className="bg-orange-600 w-2 h-10 mr-4 rounded-full" />
+                        Extra-Vehicular Activities / Hackathons
+                    </h2>
+
+                    <div className="grid gap-6">
+                        {[
+                            {
+                                title: "Bharatiya Antariksh Hackathon (BAH) 2025",
+                                desc: "ISRO",
+                                badge: "Participant"
+                            },
+                            {
+                                title: "Pitch Deck Presentation",
+                                desc: "PMIST, UMAGINE DX",
+                                badge: "Presenter"
+                            },
+                            {
+                                title: "GDG Hackathon",
+                                desc: "Google Developer Group",
+                                badge: "Participant"
+                            }
+                        ].map((item, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                            >
+                                <Card className="bg-slate-900/40 backdrop-blur-md border border-slate-700/50 hover:border-orange-500/50 transition-all group">
+                                    <CardContent className="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                        <div className="flex items-center gap-4">
+                                            <div className="w-2 h-2 rounded-full bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.8)]" />
+                                            <div>
+                                                <h3 className="text-xl font-bold text-slate-100 group-hover:text-orange-300 transition-colors">
+                                                    {item.title}
+                                                </h3>
+                                                <p className="text-slate-400 font-mono text-sm">
+                                                    {item.desc}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <span className="px-4 py-1.5 rounded-full bg-orange-500/10 text-orange-300 text-sm border border-orange-500/20 w-fit font-medium">
+                                            {item.badge}
+                                        </span>
+                                    </CardContent>
+                                </Card>
+                            </motion.div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* ACHIEVEMENTS */}
+                <section className="mb-32">
+                    <h2 className="text-3xl font-bold mb-10 text-white flex items-center">
+                        <span className="bg-yellow-500 w-2 h-10 mr-4 rounded-full" />
+                        Galactic Milestones / Achievements
+                    </h2>
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                    >
+                        <a href="https://drive.google.com/file/d/1YsWkJZ1-QOX1ib3g3MpIAMSOiChILUVt/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="block w-full">
+                            <Card className="bg-slate-900/40 backdrop-blur-md border border-yellow-500/30 hover:border-yellow-400 transition-all group">
+                                <CardContent className="p-8 flex items-center gap-6">
+                                    <div className="p-4 bg-yellow-500/10 rounded-full text-yellow-400 shadow-[0_0_20px_rgba(234,179,8,0.2)] group-hover:shadow-[0_0_30px_rgba(234,179,8,0.4)] transition-all">
+                                        <Trophy size={32} />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-yellow-200 transition-colors">
+                                            LeetCode 50 Days Badge
+                                        </h3>
+                                        <p className="text-slate-400 text-lg">
+                                            Awarded for consistent dedicated problem solving and algorithmic mastery over 50 consecutive days.
+                                        </p>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </a>
+                    </motion.div>
                 </section>
 
                 {/* FOOTER */}
