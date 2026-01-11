@@ -104,23 +104,29 @@ export default function Portfolio() {
                         </p>
 
                         <p className="text-slate-300 leading-relaxed mb-10 text-lg max-w-lg">
-                            Navigating the cosmos of code with 1.1 years of experience.
+                            Navigating the cosmos of code with 10 months of experience.
                             Building scalable, reliable web applications that launch ideas into orbit.
                             Current Mission: Master of Computer Applications.
                         </p>
 
                         <div className="flex flex-wrap gap-4">
-                            <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full px-8 py-6 text-lg hover:shadow-[0_0_20px_rgba(79,70,229,0.5)] transition-shadow">
-                                <Mail className="mr-2" size={20} /> Contact Me
-                            </Button>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=snithiyadharshini7@gmail.com" target="_blank" rel="noopener noreferrer">
+                                <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full px-8 py-6 text-lg hover:shadow-[0_0_20px_rgba(79,70,229,0.5)] transition-shadow">
+                                    <Mail className="mr-2" size={20} /> Contact Me
+                                </Button>
+                            </a>
 
-                            <Button variant="outline" className="border-indigo-500/50 text-indigo-100 hover:bg-indigo-950/50 rounded-full px-8 py-6 text-lg bg-black/40 backdrop-blur-sm">
-                                <Github className="mr-2" size={20} /> GitHub
-                            </Button>
+                            <a href="https://github.com/Nithya-collab" target="_blank" rel="noopener noreferrer">
+                                <Button variant="outline" className="border-indigo-500/50 text-indigo-100 hover:bg-indigo-950/50 rounded-full px-8 py-6 text-lg bg-black/40 backdrop-blur-sm">
+                                    <Github className="mr-2" size={20} /> GitHub
+                                </Button>
+                            </a>
 
-                            <Button variant="outline" className="border-indigo-500/50 text-indigo-100 hover:bg-indigo-950/50 rounded-full px-8 py-6 text-lg bg-black/40 backdrop-blur-sm">
-                                <Linkedin className="mr-2" size={20} /> LinkedIn
-                            </Button>
+                            <a href="https://www.linkedin.com/in/nithyadharshini07/" target="_blank" rel="noopener noreferrer">
+                                <Button variant="outline" className="border-indigo-500/50 text-indigo-100 hover:bg-indigo-950/50 rounded-full px-8 py-6 text-lg bg-black/40 backdrop-blur-sm">
+                                    <Linkedin className="mr-2" size={20} /> LinkedIn
+                                </Button>
+                            </a>
                         </div>
                     </motion.div>
 
@@ -132,8 +138,23 @@ export default function Portfolio() {
                         className="flex justify-center relative"
                     >
                         {/* Orbit rings */}
-                        <div className="absolute inset-0 rounded-full border border-indigo-500/20 w-96 h-96 m-auto animate-[spin_10s_linear_infinite]" />
-                        <div className="absolute inset-0 rounded-full border border-purple-500/20 w-[28rem] h-[28rem] m-auto animate-[spin_15s_linear_infinite_reverse]" />
+                        <div className="absolute inset-0 rounded-full border border-indigo-500/20 w-96 h-96 m-auto animate-[spin_10s_linear_infinite]">
+                            {/* Planet 1 */}
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-indigo-400 rounded-full shadow-[0_0_15px_rgba(129,140,248,0.8)]" />
+                            {/* Planet 2 - at 120 degrees */}
+                            <div className="absolute inset-0 rotate-[120deg]">
+                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-blue-300 rounded-full shadow-[0_0_10px_rgba(147,197,253,0.8)]" />
+                            </div>
+                        </div>
+
+                        <div className="absolute inset-0 rounded-full border border-purple-500/20 w-[28rem] h-[28rem] m-auto animate-[spin_15s_linear_infinite_reverse]">
+                            {/* Planet 3 */}
+                            <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-purple-400 rounded-full shadow-[0_0_20px_rgba(192,132,252,0.8)]" />
+                            {/* Planet 4 - at 200 degrees */}
+                            <div className="absolute inset-0 rotate-[200deg]">
+                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-pink-400 rounded-full shadow-[0_0_10px_rgba(244,114,182,0.8)]" />
+                            </div>
+                        </div>
 
                         <div className="w-72 h-72 rounded-full overflow-hidden border-4 border-indigo-500/50 shadow-[0_0_50px_rgba(79,70,229,0.3)] relative z-10 bg-black">
                             <img
