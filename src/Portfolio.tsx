@@ -355,7 +355,9 @@ export default function Portfolio() {
                             >
                                 <Card className="bg-slate-900 border border-slate-700 h-full overflow-hidden group relative">
                                     {/* Main Card Link (Drive) */}
-                                    <a href={project.drive} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-10" />
+                                    <a href={project.drive} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-10" aria-label={`View ${project.title} on Drive`}>
+                                        <span className="sr-only">View {project.title}</span>
+                                    </a>
 
                                     <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${project.color}`} />
                                     <CardContent className="p-8 flex flex-col h-full">
