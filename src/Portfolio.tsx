@@ -70,8 +70,47 @@ export default function Portfolio() {
         setStars(newStars);
     }, []);
 
+    const navItems = [
+        { name: "Mission", id: "mission" },
+        { name: "Arsenal", id: "skills" },
+        { name: "Log", id: "experience" },
+        { name: "Projects", id: "projects" },
+        { name: "Achievements", id: "achievements" },
+    ];
+
+    const scrollToSection = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <div className="min-h-screen bg-black text-slate-100 px-6 py-12 relative overflow-hidden font-sans selection:bg-indigo-500/30">
+            {/* NAVIGATION DECK */}
+            <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-lg border-b border-white/10 px-6 py-4">
+                <div className="container mx-auto flex justify-between items-center">
+                    <div
+                        className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400 cursor-pointer tracking-tighter"
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    >
+                        ND-07 // COMMAND
+                    </div>
+                    <div className="hidden md:flex gap-8">
+                        {navItems.map((item) => (
+                            <button
+                                key={item.name}
+                                onClick={() => scrollToSection(item.id)}
+                                className="text-xs font-bold text-slate-400 hover:text-indigo-400 transition-colors uppercase tracking-widest relative group"
+                            >
+                                {item.name}
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 group-hover:w-full transition-all duration-300" />
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            </nav>
+
             {/* DEEP SPACE BACKGROUND GRADIENT */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#1a1f35_0%,#000000_100%)] pointer-events-none" />
 
@@ -167,7 +206,7 @@ export default function Portfolio() {
                 </section>
 
                 {/* ABOUT */}
-                <section className="mb-32">
+                <section id="mission" className="mb-32 scroll-mt-24">
                     <h2 className="text-3xl font-bold mb-10 text-white flex items-center">
                         <span className="bg-indigo-600 w-2 h-10 mr-4 rounded-full" />
                         Mission Briefing / About
@@ -197,7 +236,7 @@ export default function Portfolio() {
                 </section>
 
                 {/* SKILLS */}
-                <section className="mb-32">
+                <section id="skills" className="mb-32 scroll-mt-24">
                     <h2 className="text-3xl font-bold mb-10 text-white flex items-center">
                         <span className="bg-purple-600 w-2 h-10 mr-4 rounded-full" />
                         Tech Arsenal / Skills
@@ -224,7 +263,7 @@ export default function Portfolio() {
                 </section>
 
                 {/* EXPERIENCE */}
-                <section className="mb-32">
+                <section id="experience" className="mb-32 scroll-mt-24">
                     <h2 className="text-3xl font-bold mb-10 text-white flex items-center">
                         <span className="bg-blue-600 w-2 h-10 mr-4 rounded-full" />
                         Flight Log / Experience
@@ -279,7 +318,7 @@ export default function Portfolio() {
                 </section>
 
                 {/* PROJECTS */}
-                <section className="mb-32">
+                <section id="projects" className="mb-32 scroll-mt-24">
                     <h2 className="text-3xl font-bold mb-10 text-white flex items-center">
                         <span className="bg-pink-600 w-2 h-10 mr-4 rounded-full" />
                         Galactic Projects
@@ -448,7 +487,7 @@ export default function Portfolio() {
                 </section>
 
                 {/* ACHIEVEMENTS */}
-                <section className="mb-32">
+                <section id="achievements" className="mb-32 scroll-mt-24">
                     <h2 className="text-3xl font-bold mb-10 text-white flex items-center">
                         <span className="bg-yellow-500 w-2 h-10 mr-4 rounded-full" />
                         Galactic Milestones / Achievements
