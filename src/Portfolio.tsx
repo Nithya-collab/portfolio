@@ -384,7 +384,6 @@ export default function Portfolio() {
                 </section>
 
 
-
                 {/* HACKATHONS & COMPETITIONS */}
                 <section className="mb-32">
                     <h2 className="text-3xl font-bold mb-10 text-white flex items-center">
