@@ -383,55 +383,7 @@ export default function Portfolio() {
                     </div>
                 </section>
 
-                {/* ONGOING PROJECTS */}
-                <section className="mb-32">
-                    <h2 className="text-3xl font-bold mb-10 text-white flex items-center">
-                        <span className="bg-emerald-600 w-2 h-10 mr-4 rounded-full" />
-                        Current Trajectories / Ongoing Projects
-                    </h2>
 
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {[
-                            {
-                                title: "Open Source Project",
-                                desc: "Contributing to initial project setup, feature planning, and codebase structuring.",
-                                tech: "React • Node.js • Git"
-                            },
-                            {
-                                title: "SaaS Application",
-                                desc: "Working on MVP design and core feature implementation. Focus on problem identification, system design, and scalability concepts.",
-                                tech: "System Design • Full Stack"
-                            }
-                        ].map((project, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                            >
-                                <Card className="bg-slate-900/60 backdrop-blur-md border border-slate-700 hover:border-emerald-500/50 transition-all h-full relative overflow-hidden group">
-                                    <div className="absolute top-4 right-4 flex items-center gap-2 opacity-70">
-                                        <span className="relative flex h-2 w-2">
-                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                                        </span>
-                                        <span className="text-[10px] text-emerald-400 font-mono tracking-widest uppercase">In Progress</span>
-                                    </div>
-                                    <CardContent className="p-8">
-                                        <h3 className="text-xl font-bold text-white mb-4 group-hover:text-emerald-300 transition-colors">{project.title}</h3>
-                                        <p className="text-slate-300 mb-6 leading-relaxed">
-                                            {project.desc}
-                                        </p>
-                                        <div className="flex items-center text-xs text-slate-500 font-mono border-t border-slate-800 pt-4 mt-auto">
-                                            {project.tech}
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            </motion.div>
-                        ))}
-                    </div>
-                </section>
 
                 {/* HACKATHONS & COMPETITIONS */}
                 <section className="mb-32">
