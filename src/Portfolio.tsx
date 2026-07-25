@@ -214,7 +214,7 @@ export default function Portfolio() {
 
                     <Card className="bg-slate-950/50 backdrop-blur-md border border-indigo-500/30 hover:border-indigo-400 transition-colors duration-300">
                         <CardContent className="p-10 text-slate-200 leading-loose space-y-6 text-xl font-light">
-                            <p>
+                            {/* <p>
                                 I am a Full-Stack Software Engineer with hands-on experience in developing
                                 end-to-end web applications for enterprise and product-based systems. My work
                                 includes frontend interfaces, backend services, and database design.
@@ -230,6 +230,12 @@ export default function Portfolio() {
                                 Currently pursuing my MCA, I continuously strengthen my understanding of system
                                 design, data flow, and modern engineering practices. I enjoy solving real-world
                                 problems and contributing to software that scales confidently.
+                            </p> */}
+                            <p>
+                                I'm a Software Developer passionate about building reliable and scalable web applications. Through internships and personal projects, I've gained hands-on experience developing frontend interfaces, backend APIs, and database-driven applications using Java, Spring Boot, React, Next.js, Python, and PostgreSQL
+                            </p>
+                            <p>
+                                Currently pursuing my MCA, I'm focused on improving my software engineering skills, problem-solving ability, and understanding of modern application development while building projects that solve real-world problems.
                             </p>
                         </CardContent>
                     </Card>
@@ -243,7 +249,18 @@ export default function Portfolio() {
                     </h2>
 
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                        {["React.js", "Next.js", "Node.js", "Express.js", "Tailwind CSS", "Ant Design", "Spring Boot", "Java", "Python", "Firebase", "C++", "MySQL", "PostgreSQL", "Supabase", "DSA", "Docker (Basics)", "Git & GitHub", "Postman"].map((skill, index) => (
+                        {[
+                            "Java",
+                            "Python",
+                            "Spring Boot",
+                            "React.js",
+                            "Next.js",
+                            "Node.js",
+                            "PostgreSQL",
+                            "Git",
+                            "Postman",
+                            "DSA"
+                        ].map((skill, index) => (
                             <motion.div
                                 key={skill}
                                 initial={{ opacity: 0, y: 20 }}
@@ -283,11 +300,12 @@ export default function Portfolio() {
                                 <CardContent className="p-8 md:pl-20 relative">
                                     <div className="hidden md:block absolute left-6 top-9 w-4 h-4 bg-indigo-500 rounded-full shadow-[0_0_10px_rgba(99,102,241,0.8)]" />
 
-                                    <h3 className="text-2xl font-bold text-white mb-2">Associate Software Developer</h3>
-                                    <p className="text-indigo-400 mb-4 font-mono">Opalminds IT Solutions Pvt Ltd • 2025</p>
+                                    <h3 className="text-2xl font-bold text-white mb-2">Process Associate Developer</h3>
+                                    <p className="text-indigo-400 mb-4 font-mono">Opalminds IT Solutions Pvt Ltd    Jan 2025 – Aug 2025</p>
                                     <ul className="list-disc ml-5 space-y-2 text-slate-300">
-                                        <li>Developed HRMS attendance module using Refine and Supabase</li>
-                                        <li>Maintained and debugged enterprise HRMS systems</li>
+                                        <li>Resolved numerous production bugs and enhanced attendance workflows via Supabase Edge Functions in a live HRMS built on Next.js/Supabase, used daily by the organization's employees.</li>
+                                        <li>Collaborated with senior developers during Agile sprint planning, prioritized production issues, and communicated progress across the team.</li>
+                                        <li>Developed API test cases using Postman, validated REST endpoints across edge cases.</li>
                                     </ul>
                                 </CardContent>
                             </Card>
@@ -304,11 +322,12 @@ export default function Portfolio() {
                                     <CardContent className="p-8 md:pl-20 relative">
                                         <div className="hidden md:block absolute left-6 top-9 w-4 h-4 bg-indigo-500 rounded-full shadow-[0_0_10px_rgba(99,102,241,0.8)]" />
 
-                                        <h3 className="text-2xl font-bold text-white mb-2">Full Stack Web Developer Intern</h3>
-                                        <p className="text-indigo-400 mb-4 font-mono">Computira Soft Solutions • 2023–2024</p>
+                                        <h3 className="text-2xl font-bold text-white mb-2">Software Engineer, Project Associate Intern</h3>
+                                        <p className="text-indigo-400 mb-4 font-mono">Go-Ai Technologies Pvt. Ltd.  |  Remote      Jan 2026 – Apr 2026</p>
                                         <ul className="list-disc ml-5 space-y-2 text-slate-300">
-                                            <li>Built PDF conversion tools using JavaScript and Bootstrap</li>
-                                            <li>Improved UI performance and fixed backend issues</li>
+                                            <li>Built Python data-processing pipelines using Pandas and NumPy to parse and clean 10,000+ data records, improving downstream processing reliability.</li>
+                                            <li>Redesigned preprocessing workflows to cut redundant steps, raising overall workspace efficiency by 30% as measured by internal processing-time metrics.</li>
+                                            <li>Constructed data workflow pipelines to assemble and validate testing/evaluation arrays for ML modeling, with attention to data integrity at scale.</li>
                                         </ul>
                                     </CardContent>
                                 </Card>
@@ -328,24 +347,24 @@ export default function Portfolio() {
                         {[
                             {
                                 title: "Project Management Tool",
-                                tech: "React • Spring Boot • MySQL",
+                                tech: "React | Spring Boot | MySQL",
                                 color: "from-blue-500 to-cyan-500",
                                 drive: "https://drive.google.com/drive/folders/1uhrqzDSX9X7AEcmzCTouIvp8DtZxQL2u?usp=sharing",
                                 github: "https://github.com/Nithya-collab/ProjectManagementToolBackEnd"
                             },
                             {
                                 title: "Earth Observation Data Visualizer",
-                                tech: "Leaflet • PostGIS",
+                                tech: "Leaflet | PostGIS",
                                 color: "from-green-500 to-emerald-500",
                                 drive: "https://drive.google.com/drive/folders/1zC85cMwxN7QhV6m7JA6gEajv8ACfstjZ?usp=sharing",
                                 github: "https://github.com/Nithya-collab/EarthObservationDataVisualizer"
                             },
                             {
-                                title: "Daily Vocabulary Bot",
-                                tech: "React • Gemini API",
+                                title: "Recallo — Spaced Repetition Learning Reminder",
+                                tech: "React | Vite | Email Authentication | Cron Jobs",
                                 color: "from-purple-500 to-pink-500",
-                                drive: "https://drive.google.com/drive/folders/1olYGLIq4ZrJT2DC2WuBXj4yLZRkVmWYo?usp=sharing",
-                                github: "https://github.com/Nithya-collab/DailyVocChatbot"
+                                drive: "https://drive.google.com/drive/folders/1FBmtKEBO8vwTGBse32zD7gAlbu6CbyMI?usp=sharing",
+                                github: "https://github.com/Nithya-collab/RevisionReminder"
                             }
                         ].map((project, index) => (
                             <motion.div
